@@ -34,60 +34,50 @@ A nova interface minimalista prioriza o conteúdo e a facilidade de navegação,
 ![Detalhes da Campanha](https://via.placeholder.com/800x450/000000/FFFFFF?text=Detalhes+da+Campanha+Minimalista)
 *Foco total na história da causa, progresso financeiro e botão de ação direta, garantindo que o impacto social seja o protagonista. Imagens de campanha em destaque, mas sem sobrecarregar o design.*
 
-## Guia de Uso e Configuração (WampServer)
+## Guia de Uso e Configuração
 
-Este projeto é uma aplicação web desenvolvida com React e Mantine. Para configurar e executar o projeto no seu ambiente local, siga os passos abaixo. Recomenda-se o uso de um ambiente de desenvolvimento como o WampServer para simular um servidor web completo.
+Este projeto é uma aplicação moderna baseada em **React** e **Vite**. A execução e gestão do projeto são feitas exclusivamente através do gestor de pacotes **npm**.
 
 ### Pré-requisitos
-*   [Node.js](https://nodejs.org/en/) (versão 18 ou superior) e [npm](https://www.npmjs.com/) (geralmente vem com o Node.js) ou [Yarn](https://yarnpkg.com/).
-*   [Git](https://git-scm.com/downloads) instalado.
-*   Um servidor web local como [WampServer](https://www.wampserver.com/en/) (para Windows) ou [XAMPP](https://www.apachefriends.org/index.html) (para Windows, macOS, Linux) para simular um servidor web completo, caso haja integração com backend PHP no futuro. Para este frontend, o WampServer não é estritamente necessário, mas é útil para projetos que combinam frontend e backend PHP.
+*   [Node.js](https://nodejs.org/en/) (versão 18 ou superior).
+*   [npm](https://www.npmjs.com/) (instalado automaticamente com o Node.js).
 
-### Passos para Instalação
+### Passos para Instalação e Execução
 
 1.  **Clonar o Repositório:**
-    Abra o terminal ou Git Bash e clone o repositório para a pasta desejada. Se estiver a usar WampServer e quiser que o projeto seja acessível via `localhost`, clone-o diretamente na pasta `www` (ex: `C:\wamp64\www\`):
     ```bash
     git clone https://github.com/cody007cyberdev-blip/Funda-o-Donations.git
     cd Funda-o-Donations
     ```
 
 2.  **Instalar Dependências:**
-    Dentro da pasta do projeto (`Funda-o-Donations`), instale as dependências do Node.js:
+    Utilize o npm para instalar todas as bibliotecas necessárias listadas no `package.json`:
     ```bash
     npm install
-    # ou, se estiver a usar Yarn:
-    yarn install
     ```
 
-3.  **Configuração do Tema (Minimalista):**
-    O tema minimalista preto e branco já está configurado nos ficheiros:
-    *   `src/theme/index.ts`: Define a paleta de cores `brand` (tons de cinza, preto e branco) e estilos de componentes.
-    *   `src/index.css`: Contém estilos globais para o corpo da página, removendo gradientes e sombras para um visual mais limpo.
-
-4.  **Configuração do Banco de Dados (Opcional - para Backend):**
-    Atualmente, o projeto utiliza dados mockados em `src/data/` para o frontend. Se for integrar com um backend e banco de dados real:
-    *   Inicie o WampServer (ou XAMPP) e certifique-se de que o Apache e o MySQL estão a correr.
-    *   Acesse o phpMyAdmin (geralmente `http://localhost/phpmyadmin/`).
-    *   Crie um novo banco de dados. O nome do banco de dados e as credenciais devem ser configurados num ficheiro `.env` na raiz do seu backend (se houver).
-    *   Importe o esquema SQL do seu backend (se disponível) para o banco de dados criado.
-
-5.  **Estrutura de Pastas (Frontend):**
-    *   `src/theme/`: Contém a definição do tema Mantine para a aplicação.
-    *   `src/pages/`: Componentes React que representam as páginas da aplicação.
-    *   `src/sections/`: Componentes React que representam seções maiores de uma página (ex: Hero, Features).
-    *   `src/components/`: Componentes React reutilizáveis menores.
-    *   `src/data/`: Ficheiros JSON com dados de exemplo ou mockados.
-    *   `public/`: Ficheiros estáticos como `index.html`, `favicon.ico` e imagens.
-
-6.  **Iniciar o Servidor de Desenvolvimento:**
-    No terminal, dentro da pasta `Funda-o-Donations`, execute:
+3.  **Iniciar o Servidor de Desenvolvimento:**
+    Para executar o projeto localmente com hot-reload (Vite):
     ```bash
     npm run dev
     ```
 
-7.  **Aceder à Aplicação:**
-    Abra o seu navegador web e acesse o endereço que será exibido no terminal (geralmente `http://localhost:5173`).
+4.  **Aceder à Aplicação:**
+    Após iniciar o servidor, abra o seu navegador web e aceda ao endereço indicado no terminal (geralmente `http://localhost:5173`).
+
+5.  **Gerar Build de Produção (Opcional):**
+    Para criar uma versão otimizada para publicação:
+    ```bash
+    npm run build
+    ```
+
+### Estrutura de Pastas
+
+*   `src/theme/`: Configurações do tema minimalista (Mantine).
+*   `src/pages/`: Páginas principais da aplicação.
+*   `src/components/`: Componentes UI reutilizáveis.
+*   `src/data/`: Ficheiros JSON com dados mockados para demonstração.
+*   `public/`: Ativos estáticos e imagens globais.
 
 ---
-*Desenvolvido com foco no impacto social e na simplicidade.*
+*Desenvolvido com foco no impacto social e na simplicidade através de tecnologias modernas de frontend.*
