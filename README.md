@@ -55,6 +55,10 @@ Este projeto é uma aplicação moderna baseada em **React** e **Vite**. A execu
     ```bash
     npm install --legacy-peer-deps
     ```
+    *Nota:* É provável que o projeto não execute corretamente após `npm install --legacy-peer-deps` e `npm run dev` devido a atualizações recentes de dependências. Se isso ocorrer, execute o seguinte comando para adaptar as atualizações:
+    ```bash
+    npm audit fix --legacy-peer-deps
+    ```
 
 3.  **Iniciar o Servidor de Desenvolvimento:**
     Para executar o projeto localmente com hot-reload (Vite):
