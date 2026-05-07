@@ -53,7 +53,7 @@ Este projeto é uma aplicação moderna baseada em **React** e **Vite**. A execu
 2.  **Instalar Dependências:**
     Utilize o npm para instalar todas as bibliotecas necessárias listadas no `package.json`:
     ```bash
-    npm install
+    npm install --legacy-peer-deps
     ```
 
 3.  **Iniciar o Servidor de Desenvolvimento:**
