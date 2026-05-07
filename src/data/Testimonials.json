@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": "09bfbab8-fc63-429c-a683-8f23c35a571f",
+      "testimonial": "A plataforma da FIF mudou completamente a forma como apoiamos as crianças de Cabo Verde. É simples, transparente e eficaz.",
+      "createdBy": "Mario Santos",
+      "createdByImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "company": "Escola Primária do Mindelo",
+      "jobPosition": "Professora"
+    },
+    {
+      "id": "1d973ae7-ed0b-4789-87bf-e19b4ab0329a",
+      "testimonial": "Como doador, sinto que cada escudo chega realmente às crianças que precisam. A transparência da FIF é exemplar.",
+      "createdBy": "Carla Mendes",
+      "createdByImage": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "company": "Empresário Local",
+      "jobPosition": "Diretor Comercial"
+    },
+    {
+      "id": "36532de0-6b78-43d2-b0e4-264396233fff",
+      "testimonial": "Através da FIF, conseguimos angariar fundos para material escolar para 50 crianças carenciadas. A plataforma é intuitiva e confiável.",
+      "createdBy": "Hans Pereira",
+      "createdByImage": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "company": "Associação Comunitária",
+      "jobPosition": "Coordenadora de Projetos"
+    },
+    {
+      "id": "9b06c11b-8ee9-49c2-83ab-d613729fae52",
+      "testimonial": "A FIF não é apenas uma plataforma de doações, é uma comunidade que transforma vidas. Orgulho-me de fazer parte desta missão.",
+      "createdBy": "João Fortes",
+      "createdByImage": "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "company": "Voluntário há 5 anos",
+      "jobPosition": "Engenheiro de Software"
+    }
+  ]
+}

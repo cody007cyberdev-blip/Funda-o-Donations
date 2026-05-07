@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "title": "A Fundação",
+      "links": [
+        { "label": "Sobre Nós", "link": "/sobre" },
+        { "label": "Missão, Visão e Valores", "link": "/missao" },
+        { "label": "História", "link": "/historia" },
+        { "label": "Equipa e Órgãos Sociais", "link": "/equipa" },
+        { "label": "Relatórios e Contas", "link": "/relatorios" },
+        { "label": "Estatutos", "link": "/estatutos" }
+      ]
+    },
+    {
+      "title": "Projetos e Atividades",
+      "links": [
+        { "label": "Educação e Formação", "link": "/educacao" },
+        { "label": "Saúde e HIV/SIDA", "link": "/saude" },
+        { "label": "Campanhas Ativas", "link": "/campanhas" },
+        { "label": "Eventos", "link": "/eventos" },
+        { "label": "Jardins de Infância", "link": "/jardins" },
+        { "label": "Complexo Escolar Infância Feliz", "link": "/escola" }
+      ]
+    },
+    {
+      "title": "Como Ajudar",
+      "links": [
+        { "label": "Tornar-se Sócio", "link": "/tornar-socio" },
+        { "label": "Apadrinhar uma Criança", "link": "/apadrinhar" },
+        { "label": "Fazer Donativo", "link": "/doar" },
+        { "label": "Voluntariado", "link": "/voluntariado" },
+        { "label": "Empresas e Parcerias", "link": "/parcerias" },
+        { "label": "Deixar Legado", "link": "/legado" }
+      ]
+    },
+    {
+      "title": "Contacto e Redes",
+      "links": [
+        { "label": "Contactos", "link": "src/Components/ContactCard" },
+        { "label": "Delegações nas Ilhas", "link": "" },
+        { "label": "Facebook", "link": "https://www.facebook.com/p/Funda%C3%A7%C3%A3o-Inf%C3%A2ncia-Feliz-100071205462459/", "external": true },
+        { "label": "Instagram", "link": "https://www.instagram.com/fif.ong/", "external": true },
+        { "label": "YouTube", "link": "https://www.youtube.com/@fundacaoinfanciafeliz", "external": true },
+        { "label": "Newsletter", "link": "" }
+      ]
+    }
+  ]
+}

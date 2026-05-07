@@ -1,0 +1,25 @@
+/* Error404.css */
+.error-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-image {
+    max-width: 400px;
+    width: 100%;
+}
+
+.error-details {
+    margin-top: 20px;
+    color: #333;
+}
+
+.error-details h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.error-details p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
