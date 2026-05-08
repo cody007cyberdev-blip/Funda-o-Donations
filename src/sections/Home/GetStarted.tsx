@@ -21,21 +21,21 @@ const GetStartedSection = ({ boxProps, titleProps }: IProps) => {
                 justify="space-between"
             >
                 {/* Texto + Botões */}
-                <Stack align={matchesMobile ? "center" : "start"} spacing="lg" maw={560}>
+                <Stack align={matchesMobile ? "center" : "start"} gap="lg" maw={560}>
                     <Title
                         {...titleProps}
                         align={matchesMobile ? "center" : "start"}
                         size={matchesMobile ? "h3" : "h2"}
-                        weight={800}
-                        color="primary"
+                        fw={800}
+                        c="primary"
                     >
                         Pronto para mudar a vida de uma criança?
                     </Title>
 
                     <Title
                         order={3}
-                        weight={600}
-                        color="dimmed"
+                        fw={600}
+                        c="dimmed"
                         align={matchesMobile ? "center" : "start"}
                         opacity={0.9}
                     >
@@ -49,7 +49,7 @@ const GetStartedSection = ({ boxProps, titleProps }: IProps) => {
                             radius="xl"
                             component={Link}
                             to="/apadrinhar"
-                            leftIcon={<span role="img" aria-label="Coração" title="Coração">❤️</span>}
+                            leftSection={<span role="img" aria-label="Coração" title="Coração">❤️</span>}
                         >
                             Quero Apadrinhar
                         </Button>

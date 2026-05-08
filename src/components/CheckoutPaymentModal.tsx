@@ -54,7 +54,7 @@ const mockdata = [
 const CategorySelectItem = forwardRef<HTMLDivElement, any>(
     ({title, ...others}: any, ref) => (
         <div ref={ref} {...others}>
-            <Group noWrap>
+            <Group wrap="nowrap">
                 <others.icon size={18}/>
 
                 <div>

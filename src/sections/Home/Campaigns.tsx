@@ -18,13 +18,9 @@ const CampaignsSection = ({boxProps, titleProps}: IProps) => {
             <TitleBadge title="Acontecendo perto de si"/>
             <Title {...titleProps}>Angariações na sua comunidade</Title>
             <Carousel
-                slideSize="45%"
+                slideSize={{ base: '100%', sm: '45%' }}
                 align="start"
                 slideGap="md"
-                breakpoints={[
-                    {maxWidth: 'md', slideSize: '45%'},
-                    {maxWidth: 'sm', slideSize: '100%', slideGap: 0},
-                ]}
             >
                 {slides}
             </Carousel>

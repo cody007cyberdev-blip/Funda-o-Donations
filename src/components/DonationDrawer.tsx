@@ -23,7 +23,7 @@ import {
     ThemeIcon,
     Transition,
     useMantineTheme,
-    Divider // Adicionado Divider aqui
+    Divider
 } from "@mantine/core";
 import {
     IconBrandApple,
@@ -50,7 +50,7 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
     const paperProps: PaperProps = {
         p: "md",
         withBorder: true,
-        sx: {backgroundColor: theme.white}
+        style: {backgroundColor: theme.white}
     }
 
     // Calcular os valores
@@ -86,24 +86,18 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
             <Container>
                 <Stack>
                     <Flex gap="xs" align="center">
-                        <Image src={campaign?.mainImage} height={96} width={120} fit="contain" radius="sm"/>
+                        <Image src={campaign?.mainImage} h={96} w={120} fit="contain" radius="sm"/>
                         <Text>Está a apoiar <b>{campaign?.title}</b></Text>
                     </Flex>
                     <NumberInput
                         size="md"
                         label="Insira o valor do seu donativo (CVE)"
-                        precision={2}
+                        decimalScale={2}
                         min={0}
                         step={100}
                         value={donationAmount}
-                        onChange={(value) => setDonationAmount(value || 0)}
+                        onChange={(value) => setDonationAmount(typeof value === 'number' ? value : 0)}
                         rightSection={<IconCurrencyDollar size={iconSize}/>}
-                        parser={(value) => value?.replace(/\$\s?|(,*)/g, '')}
-                        formatter={(value) =>
-                            !Number.isNaN(parseFloat(value || '0'))
-                                ? `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                                : ''
-                        }
                     />
                     <Paper {...paperProps}>
                         <Text fw={500}>Contribua para os serviços da FIF</Text>
@@ -138,14 +132,14 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
                             <Group mt="sm">
                                 <Radio
                                     value="gpay"
-                                    label={<Group spacing="xs"><IconBrandGoogle size={iconSize}/><Text>Google Pay</Text></Group>}/>
+                                    label={<Group gap="xs"><IconBrandGoogle size={iconSize}/><Text>Google Pay</Text></Group>}/>
                                 <Radio
                                     value="applepay"
-                                    label={<Group spacing="xs"><IconBrandApple size={iconSize}/><Text>Apple
+                                    label={<Group gap="xs"><IconBrandApple size={iconSize}/><Text>Apple
                                         Pay</Text></Group>}/>
                                 <Radio
                                     value="card"
-                                    label={<Group spacing="xs"><IconCreditCard size={iconSize}/><Text>Cartão de crédito ou
+                                    label={<Group gap="xs"><IconCreditCard size={iconSize}/><Text>Cartão de crédito ou
                                         débito</Text></Group>}/>
                             </Group>
                         </Radio.Group>
@@ -162,7 +156,7 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
                                     mt="sm"
                                     style={styles}
                                 >
-                                    <Stack sx={{width: '100%'}}>
+                                    <Stack style={{width: '100%'}}>
                                         <TextInput label="Endereço de email"/>
                                         <Group grow>
                                             <TextInput label="Primeiro nome"/>
@@ -187,7 +181,7 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
                     </Paper>
                     <Paper {...paperProps}>
                         <Stack>
-                            <Group spacing={4}>
+                            <Group gap={4}>
                                 <Checkbox label="Não exibir o meu nome publicamente na campanha de angariação."/>
                                 <Popover width={200} position="bottom" withArrow shadow="md">
                                     <Popover.Target>
@@ -207,11 +201,11 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
                     <Paper {...paperProps}>
                         <Stack>
                             <Text fw={700} size="lg">Resumo do seu donativo</Text>
-                            <Group position="apart">
+                            <Group justify="space-between">
                                 <Text>Valor total do donativo</Text>
                                 <Text fw={500}>{formatCurrency(donationAmount)}</Text>
                             </Group>
-                            <Group position="apart">
+                            <Group justify="space-between">
                                 <Flex align="center" gap="xs">
                                     <Text>Contribuição FIF ({fifPercentage}%)</Text>
                                     <Popover width={200} position="bottom" withArrow shadow="md">
@@ -227,19 +221,19 @@ const DonationDrawer = ({campaign, iconSize, ...others}: IProps) => {
                                 </Flex>
                                 <Text fw={500}>{formatCurrency(fifContribution)}</Text>
                             </Group>
-                            <Group position="apart">
+                            <Group justify="space-between">
                                 <Text>Valor que vai para a campanha</Text>
                                 <Text fw={500}>{formatCurrency(netDonation)}</Text>
                             </Group>
                             <Divider my="xs" />
-                            <Group position="apart">
+                            <Group justify="space-between">
                                 <Text fw={700}>Total a pagar hoje</Text>
-                                <Text fw={700} size="lg" color="green">{formatCurrency(totalAmount)}</Text>
+                                <Text fw={700} size="lg" c="green">{formatCurrency(totalAmount)}</Text>
                             </Group>
                             <Button size="lg" color="secondary" disabled={donationAmount <= 0}>
                                 Doar Agora {formatCurrency(totalAmount)}
                             </Button>
-                            <Text size="xs" color="dimmed" align="center">
+                            <Text size="xs" c="dimmed" ta="center">
                                 * {formatCurrency(netDonation)} será direcionado para a campanha "{campaign?.title}"
                             </Text>
                         </Stack>

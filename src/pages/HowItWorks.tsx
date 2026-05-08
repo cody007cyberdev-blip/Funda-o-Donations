@@ -17,13 +17,14 @@ import {
     Title,
     TitleProps
 } from "@mantine/core";
-import AddImg from "../assets/img/add-campaign.png";       // pode manter ou trocar por foto de criança/escola
-import MoneyImg from "../assets/img/money-income.png";     // pode trocar por foto de entrega de donativos
-import ShareImg from "../assets/img/share-campaign.png";   // pode trocar por foto de partilha nas redes
+import AddImg from "../assets/img/add-campaign.png";
+import MoneyImg from "../assets/img/money-income.png";
+import ShareImg from "../assets/img/share-campaign.png";
 import TestimonialsSection from "../sections/Home/Testimonials";
 import { Link } from "react-router-dom";
+import React from "react";
 
-const HowItWorksPage = (): JSX.Element => {
+const HowItWorksPage = (): React.ReactElement => {
     const boxProps: BoxProps = {
         mt: 96,
         mb: 136,
@@ -32,10 +33,9 @@ const HowItWorksPage = (): JSX.Element => {
 
     const titleProps: TitleProps = {
         size: 32,
-        weight: 800,
+        fw: 800,
         mb: "xl",
-        transform: 'capitalize',
-        sx: { lineHeight: '40px' }
+        style: { textTransform: 'capitalize', lineHeight: '40px' }
     }
 
     const listProps: Omit<ListProps, 'children'> = {
@@ -47,7 +47,7 @@ const HowItWorksPage = (): JSX.Element => {
         radius: "sm",
         shadow: "md",
         padding: "lg",
-        sx: {
+        style: {
             backdropFilter: `blur(16px) saturate(180%)`,
             backgroundColor: `rgba(255, 255, 255, 0.75)`,
             border: `none`,
@@ -55,7 +55,7 @@ const HowItWorksPage = (): JSX.Element => {
     }
 
     const imageProps: ImageProps = {
-        height: 160,
+        h: 160,
         fit: "contain",
         py: "xl"
     }
@@ -69,7 +69,7 @@ const HowItWorksPage = (): JSX.Element => {
             <Box>
                 <Container>
                     {/* Hero + Vídeo */}
-                    <Box {...boxProps} sx={{ textAlign: 'center' }}>
+                    <Box {...boxProps} style={{ textAlign: 'center' }}>
                         <Title mb={48} fw={800}>Como pode ajudar a Fundação Infância Feliz</Title>
                         <Text>
                             Há mais de 20 anos trabalhamos para garantir os direitos e o bem-estar das crianças e jovens de Cabo Verde.
@@ -77,7 +77,7 @@ const HowItWorksPage = (): JSX.Element => {
                         <Text fw={600} mb={36}>Veja o nosso vídeo institucional</Text>
                         <AspectRatio ratio={16 / 9} maw={800} mx="auto">
                             <iframe
-                                src="https://www.youtube.com/embed/ajSmGohkdA4" // Vídeo real da ação solidária da FIF (2025)
+                                src="https://www.youtube.com/embed/ajSmGohkdA4"
                                 title="Ação solidária da Fundação Infância Feliz"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -88,14 +88,10 @@ const HowItWorksPage = (): JSX.Element => {
 
                     {/* 3 Passos */}
                     <Box {...boxProps}>
-                        <Title {...titleProps} align="center">É muito simples ajudar</Title>
+                        <Title {...titleProps} ta="center">É muito simples ajudar</Title>
                         <SimpleGrid
-                            cols={3}
-                            spacing="lg"
-                            breakpoints={[
-                                { maxWidth: 'md', cols: 3, spacing: 'md' },
-                                { maxWidth: 'sm', cols: 1, spacing: 0 },
-                            ]}
+                            cols={{ base: 1, sm: 3 }}
+                            gap="lg"
                         >
                             {/* Passo 1 */}
                             <Card {...cardProps}>
@@ -147,10 +143,8 @@ const HowItWorksPage = (): JSX.Element => {
                     {/* Call to Action Final */}
                     <Box {...boxProps}>
                         <SimpleGrid
-                            cols={2}
-                            breakpoints={[
-                                { maxWidth: 'sm', cols: 1, spacing: 0 },
-                            ]}
+                            cols={{ base: 1, sm: 2 }}
+                            gap="lg"
                         >
                             {/* Card 1 */}
                             <Card
@@ -165,7 +159,7 @@ const HowItWorksPage = (): JSX.Element => {
                                         alt="Crianças felizes na escola da FIF"
                                     />
                                 </Card.Section>
-                                <Stack spacing="sm" align="start" mt="md" px="md" pb="md">
+                                <Stack gap="sm" align="start" mt="md" px="md" pb="md">
                                     <Text size="lg" fw={500}>Conheça os nossos projetos e beneficiários</Text>
                                     <Button size="md" component={Link} to="/projetos">
                                         Ver Projetos
@@ -186,9 +180,9 @@ const HowItWorksPage = (): JSX.Element => {
                                         alt="Fazer donativo"
                                     />
                                 </Card.Section>
-                                <Stack spacing="sm" align="start" mt="md" px="md" pb="md">
+                                <Stack gap="sm" align="start" mt="md" px="md" pb="md">
                                     <Text size="lg" fw={500}>Faça já o seu donativo ou apadrinhamento</Text>
-                                    <Button size="md" color="yellow" component={Link} to="/doar">
+                                    <Button size="md" c="yellow" component={Link} to="/doar">
                                         Quero Ajudar Agora
                                     </Button>
                                 </Stack>

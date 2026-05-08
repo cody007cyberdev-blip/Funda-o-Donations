@@ -1,37 +1,32 @@
-import { MantineThemeOverride } from "@mantine/core";
+import { createTheme, MantineThemeOverride } from "@mantine/core";
 
-export const customTheme: MantineThemeOverride = {
-  defaultRadius: "xs", // Minimalista: bordas menos arredondadas
-  colorScheme: "light",
-
-  // PALETA MINIMALISTA PRETO E BRANCO
+export const customTheme: any = createTheme({
+  defaultRadius: "xs",
+  
   colors: {
-    // Escala de cinzas para o tema preto e branco
     brand: [
-      "#FFFFFF", // 0: Branco puro
-      "#F8F9FA", // 1: Cinza muito claro
-      "#E9ECEF", // 2: Cinza claro
-      "#DEE2E6", // 3: Cinza borda
-      "#ADB5BD", // 4: Cinza médio
-      "#6C757D", // 5: Cinza texto secundário
-      "#495057", // 6: Cinza escuro
-      "#343A40", // 7: Quase preto
-      "#212529", // 8: Preto suave
-      "#000000", // 9: Preto puro
+      "#FFFFFF",
+      "#F8F9FA",
+      "#E9ECEF",
+      "#DEE2E6",
+      "#ADB5BD",
+      "#6C757D",
+      "#495057",
+      "#343A40",
+      "#212529",
+      "#000000",
     ],
   },
 
   primaryColor: "brand",
-  primaryShade: 9, // Preto puro como cor primária
+  primaryShade: 9,
 
-  // Tipografia limpa e moderna
   fontFamily: "Inter, Montserrat, sans-serif",
   headings: {
     fontFamily: "Inter, Montserrat, sans-serif",
-    fontWeight: 700,
+    fontWeight: "700",
   },
 
-  // Ajustes para componentes minimalistas
   components: {
     Button: {
       defaultProps: {
@@ -39,39 +34,18 @@ export const customTheme: MantineThemeOverride = {
         size: "md",
         variant: "filled",
       },
-      styles: (theme) => ({
-        root: {
-          backgroundColor: theme.black,
-          color: theme.white,
-          '&:hover': {
-            backgroundColor: theme.colors.brand[7],
-          },
-        },
-      }),
     },
     Card: {
       defaultProps: {
         radius: "xs",
         withBorder: true,
       },
-      styles: (theme) => ({
-        root: {
-          backgroundColor: theme.white,
-          borderColor: theme.colors.brand[2],
-        },
-      }),
     },
     Badge: {
       defaultProps: {
         radius: "xs",
         variant: "outline",
       },
-      styles: (theme) => ({
-        root: {
-          borderColor: theme.black,
-          color: theme.black,
-        },
-      }),
     },
     TextInput: {
       defaultProps: {
@@ -85,4 +59,4 @@ export const customTheme: MantineThemeOverride = {
       },
     },
   },
-};
+});

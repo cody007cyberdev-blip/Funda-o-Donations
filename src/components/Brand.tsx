@@ -58,7 +58,7 @@ const Brand = ({ asLink = true, variant = "default", ...others }: BrandProps) =>
         component="span"
         className={classes.highlight}
         inherit
-        weight={900}
+        fw={900}
         ml={6}
       >
         - FIF

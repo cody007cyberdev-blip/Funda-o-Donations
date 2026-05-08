@@ -9,8 +9,9 @@ import CampaignsSection from "../sections/Home/Campaigns";
 import GetStartedSection from "../sections/Home/GetStarted";
 import TestimonialsSection from "../sections/Home/Testimonials";
 import { Helmet } from "react-helmet";
+import React from "react";
 
-const HomePage = (): JSX.Element => {
+const HomePage = (): React.ReactElement => {
     const boxProps: BoxProps = {
         mt: 96,
         mb: 136,
@@ -19,17 +20,16 @@ const HomePage = (): JSX.Element => {
 
     const titleProps: TitleProps = {
         size: 32,
-        weight: 800,
+        fw: 800,
         mb: "lg",
-        transform: 'capitalize',
-        sx: { lineHeight: '40px' }
+        style: { textTransform: 'capitalize', lineHeight: '40px' }
     }
 
     const subTitleProps: TextProps = {
         size: 20,
-        weight: 700,
+        fw: 700,
         mb: "md",
-        sx: { lineHeight: '28px' }
+        style: { lineHeight: '28px' }
     }
 
     return (

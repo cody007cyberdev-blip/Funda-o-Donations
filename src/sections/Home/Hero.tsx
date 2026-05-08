@@ -126,9 +126,9 @@ const HeroSection = () => {
 
             <div className={classes.inner}>
                 <Container>
-                    <Stack spacing="xl">
+                    <Stack gap="xl">
                         <Center>
-                            <Group spacing={4} className={classes.badge}>
+                            <Group gap={4} className={classes.badge}>
                                 <IconRocket stroke={1.5}/>
                                 <Text transform="uppercase">Faça Acontecer</Text>
                             </Group>

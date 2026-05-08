@@ -32,7 +32,7 @@ import * as localizedFormat from "dayjs/plugin/localizedFormat";
 
 dayjs.extend(localizedFormat);
 
-const CampaignDetailsPage = (): JSX.Element => {
+const CampaignDetailsPage = (): React.ReactElement => {
     const { id } = useParams();
     const [campaign, setCampaign] = useState<ICampaign | undefined>();
     const [opened, { open, close }] = useDisclosure(false);
@@ -74,8 +74,8 @@ const CampaignDetailsPage = (): JSX.Element => {
 
                 <Grid gutter="xl">
                     {/* Coluna Principal */}
-                    <Grid.Col lg={8}>
-                        <Stack spacing="lg">
+                    <Grid.Col span={{lg: 8}}>
+                        <Stack gap="lg">
                             <Card radius="lg" shadow="sm">
                                 <Card.Section>
                                     <Image
@@ -87,23 +87,23 @@ const CampaignDetailsPage = (): JSX.Element => {
                                     />
                                 </Card.Section>
 
-                                <Stack mt="lg" spacing="md">
+                                <Stack mt="lg" gap="md">
                                     <Title order={1} {...titleProps}>
                                         {campaign.title}
                                     </Title>
 
-                                    <Flex align="center" gap="xs" color="dimmed" wrap="wrap">
+                                    <Flex align="center" gap="xs" c="dimmed" wrap="wrap">
                                         <Text size="sm">Campanha oficial da</Text>
                                         <Flex align="center" gap="xs">
                                             <Avatar src="/logo-fif.png" size="sm" radius="xl" />
-                                            <Text weight={600} size="sm">Fundação Infância Feliz</Text>
-                                            <Text size="xs" color="green">✓ Verificada</Text>
+                                            <Text fw={600} size="sm">Fundação Infância Feliz</Text>
+                                            <Text size="xs" c="green">✓ Verificada</Text>
                                         </Flex>
                                         <Text size="sm">• Cabo Verde • {campaign.category}</Text>
                                     </Flex>
 
                                     <Text {...subTitleProps}>A nossa missão</Text>
-                                    <Text size="md" color="dimmed" style={{ lineHeight: 1.8 }}>
+                                    <Text size="md" c="dimmed" style={{ lineHeight: 1.8 }}>
                                         {campaign.description}
                                     </Text>
 
@@ -111,23 +111,23 @@ const CampaignDetailsPage = (): JSX.Element => {
                                     {matchesMobile && (
                                         <>
                                             <Divider my="lg" />
-                                            <Stack spacing="sm">
+                                            <Stack gap="sm">
                                                 <Flex justify="space-between" align="flex-end">
-                                                    <Title order={2} color="secondary">
+                                                    <Title order={2} c="secondary">
                                                         {campaign.amountRaised}
                                                     </Title>
-                                                    <Text size="lg" color="dimmed">
+                                                    <Text size="lg" c="dimmed">
                                                         angariados de {campaign.goal}
                                                     </Text>
                                                 </Flex>
-                                                <Progress value={progress} size="xl" color="secondary" radius="xl" />
+                                                <Progress value={progress} size="xl" c="secondary" radius="xl" />
                                                 <Flex justify="space-between">
-                                                    <Text weight={600}>{progress}% angariados</Text>
-                                                    <Text weight={600}>{campaign.contributors} doadores</Text>
+                                                    <Text fw={600}>{progress}% angariados</Text>
+                                                    <Text fw={600}>{campaign.contributors} doadores</Text>
                                                 </Flex>
 
                                                 <Flex gap="xs">
-                                                    <Button fullWidth size="lg" color="secondary" onClick={donateOpen}>
+                                                    <Button fullWidth size="lg" c="secondary" onClick={donateOpen}>
                                                         Fazer Donativo
                                                     </Button>
                                                     <ActionIcon size="lg" variant="light" onClick={open}>
@@ -136,7 +136,7 @@ const CampaignDetailsPage = (): JSX.Element => {
                                                     <ActionIcon
                                                         size="lg"
                                                         variant={following ? "filled" : "outline"}
-                                                        color="secondary"
+                                                        c="secondary"
                                                         onClick={() => setFollowing(prev => !prev)}
                                                     >
                                                         {following ? <IconHeartFilled size={iconSize} /> : <IconHeart size={iconSize} />}
@@ -153,18 +153,18 @@ const CampaignDetailsPage = (): JSX.Element => {
                                 <Text {...subTitleProps} mb="sm">Organizador</Text>
                                 <Flex align="center" gap="md">
                                     <Avatar src="/logo-fif.png" size="lg" radius="xl" />
-                                    <Stack spacing={0}>
-                                        <Text weight={700} size="lg">Fundação Infância Feliz</Text>
-                                        <Text size="sm" color="dimmed">
+                                    <Stack gap={0}>
+                                        <Text fw={700} size="lg">Fundação Infância Feliz</Text>
+                                        <Text size="sm" c="dimmed">
                                             ONG de utilidade pública em Cabo Verde desde 2002
                                         </Text>
-                                        <Text size="xs" color="green" mt={4}>✓ Organização verificada</Text>
+                                        <Text size="xs" c="green" mt={4}>✓ Organização verificada</Text>
                                     </Stack>
                                 </Flex>
                             </Paper>
 
                             <Paper {...paperProps}>
-                                <Text size="sm" color="dimmed">
+                                <Text size="sm" c="dimmed">
                                     Campanha criada em {dayjs(campaign.createdAt).format("LL")}
                                 </Text>
                             </Paper>
@@ -172,35 +172,34 @@ const CampaignDetailsPage = (): JSX.Element => {
                     </Grid.Col>
 
                     {/* Coluna Lateral */}
-                    <Grid.Col lg={4}>
-                        <Stack spacing="lg">
+                    <Grid.Col span={{lg: 4}}>
+                        <Stack gap="lg">
                             {!matchesMobile && (
                                 <Paper {...paperProps}>
-                                    <Stack spacing="md">
-                                        <Flex justify="space-between" align="flex-end">
-                                            <Title order={2} color="secondary">
+                                    <Stack gap="md">
+                                        <Flex justify="space-between" align="flex-en                                            <Title order={2} c="secondary">
                                                 {campaign.amountRaised}
                                             </Title>
-                                            <Text size="lg" color="dimmed">de {campaign.goal}</Text>
+                                            <Text size="lg" c="dimmed">de {campaign.goal}</Text>
                                         </Flex>
-                                        <Progress value={progress} size="xl" color="secondary" radius="xl" />
+                                        <Progress value={progress} size="xl" c="secondary" radius="xl" />
                                         <Flex justify="space-between">
-                                            <Text weight={600}>{progress}% angariados</Text>
-                                            <Text weight={600}>{campaign.contributors} doadores</Text>
+                                            <Text fw={600}>{progress}% angariados</Text>
+                                            <Text fw={600}>{campaign.contributors} doadores</Text>
                                         </Flex>
 
-                                        <Button size="xl" color="secondary" onClick={donateOpen}>
+                                        <Button size="xl" c="secondary" onClick={donateOpen}>
                                             Fazer Donativo
                                         </Button>
 
-                                        <Button leftIcon={<IconShare size={iconSize} />} variant="outline" onClick={open}>
+                                        <Button leftSection={<IconShare size={iconSize} />} variant="outline" onClick={open}>
                                             Partilhar com amigos
                                         </Button>
 
                                         <Button
-                                            leftIcon={following ? <IconHeartFilled size={iconSize} /> : <IconHeart size={iconSize} />}
+                                            leftSection={following ? <IconHeartFilled size={iconSize} /> : <IconHeart size={iconSize} />}
                                             variant={following ? "filled" : "outline"}
-                                            color="secondary"
+                                            c="secondary"
                                             onClick={() => setFollowing(prev => !prev)}
                                         >
                                             {following ? "A seguir" : "Seguir campanha"}
@@ -234,7 +233,7 @@ const CampaignDetailsPage = (): JSX.Element => {
                             </Paper>
 
                             {matchesMobile && (
-                                <Button leftIcon={<IconFlag size={iconSize} />} variant="subtle" color="red">
+                                <Button leftSection={<IconFlag size={iconSize} />} variant="subtle" c="red">
                                     Denunciar campanha
                                 </Button>
                             )}

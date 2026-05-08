@@ -67,9 +67,9 @@ interface ISocialProps {
 const SocialSelectItem = forwardRef<HTMLDivElement, ISocialProps>(
     ({title, icon: Icon, ...others}: ISocialProps, ref) => (
         <div ref={ref} {...others}>
-            <Group noWrap>
+            <Group wrap="nowrap">
                 <Icon size={18} stroke={1.5}/>
-                <Text size="sm" transform="capitalize">{title}</Text>
+                <Text size="sm" style={{textTransform: 'capitalize'}}>{title}</Text>
             </Group>
         </div>
     )
@@ -117,11 +117,11 @@ const CreateCampaignPage = () => {
                         {title: 'Youtube', icon: IconBrandYoutube},
                         {title: 'Outros links', icon: IconLink},
                     ].map(c => ({value: c.title, label: c.title, ...c}))}
-                itemComponent={SocialSelectItem}
+                renderOption={SocialSelectItem}
             />
             <TextInput
                 placeholder="https://"
-                sx={{flex: 1}}
+                style={{flex: 1}}
                 {...socialForm.getInputProps(`employees.${index}.name`)}
             />
             <ActionIcon color="red" onClick={() => socialForm.removeListItem('employees', index)}>
@@ -145,7 +145,7 @@ const CreateCampaignPage = () => {
         withBorder: false,
         shadow: 'sm',
         mb: "md",
-        sx: {backgroundColor: theme.white}
+        style: {backgroundColor: theme.white}
     }
 
     return (
@@ -155,7 +155,7 @@ const CreateCampaignPage = () => {
             </Helmet>
             <Box>
                 <Container my={36}>
-                    <Title mb="xl" align="center">Criar a sua campanha</Title>
+                    <Title mb="xl" ta="center">Criar a sua campanha</Title>
                     <Stepper active={active} onStepClick={setActive} breakpoint="sm">
                         <Stepper.Step
                             label="Começar"
@@ -163,7 +163,7 @@ const CreateCampaignPage = () => {
                         >
                             <Title {...titleProps}>Informações da campanha</Title>
                             <Paper {...paperProps}>
-                                <SimpleGrid cols={2} breakpoints={[{maxWidth: 'sm', cols: 1}]}>
+                                <SimpleGrid cols={{base: 1, sm: 2}}>
                                     <TextInput label="Título"/>
                                     <CategorySelect/>
                                 </SimpleGrid>
@@ -171,13 +171,13 @@ const CreateCampaignPage = () => {
                             <Paper {...paperProps}>
                                 <Title {...subTitleProps}>Localização da campanha</Title>
                                 <Text size="sm" mb="sm">Selecione o país para onde enviaremos os fundos (normalmente onde reside). Isto ajuda a emparelhar com os processadores de pagamento corretos.</Text>
-                                <SimpleGrid cols={2} breakpoints={[{maxWidth: 'sm', cols: 1}]}>
+                                <SimpleGrid cols={{base: 1, sm: 2}}>
                                     <CountrySelect/>
                                     <TextInput label="Cidade" placeholder="cidade"/>
                                 </SimpleGrid>
                             </Paper>
                             <Paper {...paperProps}>
-                                <Stack spacing="sm">
+                                <Stack gap="sm">
                                     <Title {...subTitleProps}>Informações de doação</Title>
                                     <CurrencySelect/>
                                     <Radio.Group
@@ -192,7 +192,7 @@ const CreateCampaignPage = () => {
                                     </Radio.Group>
                                     <Paper {...paperProps}>
                                         {target === 'deadline' ?
-                                            <Stack spacing="xs">
+                                            <Stack gap="xs">
                                                 <Text size="sm">Angariação com data de fim específica?</Text>
                                                 <Text size="sm">Cria urgência e deve ser usada quando o dinheiro é necessário antes de uma certa data.</Text>
                                                 <DateInput
@@ -208,7 +208,7 @@ const CreateCampaignPage = () => {
                                                 <Checkbox
                                                     label="Permitir que a sua angariação seja financiada acima do valor necessário?"/>
                                             </Stack> :
-                                            <Stack spacing="xs">
+                                            <Stack gap="xs">
                                                 <Text size="sm">Angariação contínua (sem prazo)?</Text>
                                                 <Text size="sm">Deve ser usada se está a recolher dinheiro regularmente.</Text>
                                                 <Checkbox
@@ -246,10 +246,10 @@ const CreateCampaignPage = () => {
                                 />
                             </Paper>
                             <Paper {...paperProps}>
-                                <Stack spacing="sm">
+                                <Stack gap="sm">
                                     <Title {...subTitleProps}>Detalhes de fundos e registo</Title>
                                     <Text size="sm">*Nome da pessoa que recebe os fundos. Para organizações, o nome do representante legal (pode ser alterado posteriormente).</Text>
-                                    <SimpleGrid cols={2} breakpoints={[{maxWidth: 'sm', cols: 1}]}>
+                                    <SimpleGrid cols={{base: 1, sm: 2}}>
                                         <TextInput label="Primeiro nome"/>
                                         <TextInput label="Último nome"/>
                                     </SimpleGrid>
@@ -276,7 +276,7 @@ const CreateCampaignPage = () => {
                                 A história da sua campanha
                             </Title>
                             <Paper {...paperProps}>
-                                <Stack spacing="sm">
+                                <Stack gap="sm">
                                     <Text size="sm">Explique por que está a angariar dinheiro, para que serão usados os fundos e o quanto valoriza o apoio</Text>
                                     <RichTextEditor editor={editor}>
                                         <RichTextEditor.Toolbar sticky stickyOffset={60}>
@@ -339,14 +339,14 @@ const CreateCampaignPage = () => {
                         >
                             <Title {...titleProps}>Detalhes finais</Title>
                             <Paper {...paperProps}>
-                                <Stack spacing="sm">
+                                <Stack gap="sm">
                                     <Title {...subTitleProps}>Gerir Equipa</Title>
                                     <Text size="sm">Se há mais de uma pessoa responsável por esta angariação e gostaria que recebam crédito público e ajudem a gerir esta página, convide-as por email.</Text>
                                     <Text size="sm">Os membros da equipa serão mostrados na sua página juntamente com a sua função. Lembre-se, os membros da equipa podem alterar todos os elementos da página.</Text>
                                     <Alert color="orange" variant="light" icon={<IconInfoCircleFilled size={18}/>}>
                                         Ainda não convidou ninguém para ajudar a gerir esta angariação.
                                     </Alert>
-                                    <SimpleGrid cols={2} breakpoints={[{maxWidth: 'sm', cols: 1}]}>
+                                    <SimpleGrid cols={{base: 1, sm: 2}}>
                                         <TextInput label="Primeiro nome"/>
                                         <TextInput label="Último nome"/>
                                         <TextInput label="Email" mb="xs"/>
@@ -357,7 +357,7 @@ const CreateCampaignPage = () => {
                                         />
                                     </SimpleGrid>
                                     <Button
-                                        leftIcon={<IconMail size={18}/>}
+                                        leftSection={<IconMail size={18}/>}
                                         mx="auto"
                                         variant="light"
                                     >
@@ -367,7 +367,7 @@ const CreateCampaignPage = () => {
                             </Paper>
                             <Paper {...paperProps}>
                                 <Title {...subTitleProps}>Visibilidade</Title>
-                                <Stack spacing="sm">
+                                <Stack gap="sm">
                                     <Checkbox label="Permitir que a sua angariação seja mostrada em grupos criados por utilizadores."/>
                                     <Checkbox
                                         label="Marque esta caixa se quiser ocultar a sua campanha no nosso site. Apenas aqueles a quem enviar o URL poderão encontrá-la e doar."/>
@@ -385,16 +385,16 @@ const CreateCampaignPage = () => {
                                         <Flex mb="xs">
                                         </Flex>
                                     ) : (
-                                        <Text color="dimmed" align="center" my="md">
+                                        <Text c="dimmed" ta="center" my="md">
                                             Adicionar link de rede social
                                         </Text>
                                     )}
 
                                     {socialFields}
 
-                                    <Group position="center" mt="md">
+                                    <Group justify="center" mt="md">
                                         <Button
-                                            leftIcon={<IconPlus size={18}/>}
+                                            leftSection={<IconPlus size={18}/>}
                                             onClick={() =>
                                                 socialForm.insertListItem('employees', {
                                                     name: '',
@@ -419,18 +419,18 @@ const CreateCampaignPage = () => {
                         <Stepper.Step label="Métodos de pagamento" description="Obter acesso completo">
                             <Title {...titleProps}>Métodos de Pagamento da Angariação</Title>
                             <Paper {...paperProps}>
-                                <Stack spacing="sm">
+                                <Stack gap="sm">
                                     <Title {...subTitleProps}>Ativar processadores de pagamento para a sua página de angariação</Title>
                                     <Alert icon={<IconCurrency size={18}/>} color="blue">Pode ativar Pagamentos por Cartão GGF (alimentados por MangoPay) se mudar a sua moeda de GBP para USD</Alert>
                                     <Text size="sm">Métodos de pagamento disponíveis</Text>
                                     <Group>
-                                        <Button variant="light" leftIcon={<IconBrandPaypal size={18}/>}>
+                                        <Button variant="light" leftSection={<IconBrandPaypal size={18}/>}>
                                             Ligar com Paypal
                                         </Button>
-                                        <Button variant="light" leftIcon={<IconBrandGoogle size={18}/>}>
+                                        <Button variant="light" leftSection={<IconBrandGoogle size={18}/>}>
                                             Ligar com Google Pay
                                         </Button>
-                                        <Button variant="light" leftIcon={<IconBrandApple size={18}/>}>
+                                        <Button variant="light" leftSection={<IconBrandApple size={18}/>}>
                                             Ligar com Apple Pay
                                         </Button>
                                     </Group>
@@ -438,21 +438,21 @@ const CreateCampaignPage = () => {
                             </Paper>
                         </Stepper.Step>
                         <Stepper.Completed>
-                            <Title {...titleProps} align="center" my="xl">Concluído, sente-se enquanto terminamos de configurar tudo para si</Title>
+                            <Title {...titleProps} ta="center" my="xl">Concluído, sente-se enquanto terminamos de configurar tudo para si</Title>
                         </Stepper.Completed>
                     </Stepper>
 
-                    <Group position="center" mt="xl">
+                    <Group justify="center" mt="xl">
                         <Button
                             variant="default"
                             onClick={prevStep}
-                            leftIcon={<IconChevronLeft size={18}/>}
+                            leftSection={<IconChevronLeft size={18}/>}
                         >
                             Anterior
                         </Button>
                         {active < 4 ?
-                            <Button onClick={nextStep} leftIcon={<IconChevronRight size={18}/>}>Próximo passo</Button> :
-                            <Button component="a" href="/dashboard" leftIcon={<IconCheck size={18}/>}>
+                            <Button onClick={nextStep} leftSection={<IconChevronRight size={18}/>}>Próximo passo</Button> :
+                            <Button component="a" href="/dashboard" leftSection={<IconCheck size={18}/>}>
                                 Lançar campanha
                             </Button>
                         }

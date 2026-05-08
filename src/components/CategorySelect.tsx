@@ -51,18 +51,13 @@ const mockdata = [
     },
 ];
 
-const CategorySelectItem = forwardRef<HTMLDivElement, any>(
-    ({title, ...others}: any, ref) => (
-        <div ref={ref} {...others}>
-            <Group noWrap>
-                <others.icon size={18}/>
-
-                <div>
-                    <Text size="sm">{title}</Text>
-                </div>
-            </Group>
+const CategorySelectItem: any = ({ option }: any) => (
+    <Group wrap="nowrap">
+        <option.icon size={18}/>
+        <div>
+            <Text size="sm">{option.label}</Text>
         </div>
-    )
+    </Group>
 );
 
 
@@ -70,15 +65,11 @@ const CategorySelect = () => {
     return (
         <Select
             label="Category"
-            itemComponent={CategorySelectItem}
-            data={mockdata.map(c => ({value: c.title, label: c.title, ...c}))}
+            renderOption={CategorySelectItem}
+            data={mockdata.map(c => ({value: c.title, label: c.title, icon: c.icon}))}
             searchable
             clearable
             maxDropdownHeight={300}
-            nothingFound="Nothing found"
-            filter={(value, item) =>
-                item?.title?.toLowerCase().includes(value?.toLowerCase().trim())
-            }
         />
     );
 };

@@ -48,11 +48,11 @@ const UserButton = () => {
                         <Avatar src={userData?.avatar} radius="xl"/>
 
                         <div style={{flex: 1}}>
-                            <Text size="sm" weight={500}>
+                            <Text size="sm" fw={500}>
                                 {userData.name}
                             </Text>
 
-                            <Text color="dimmed" size="xs">
+                            <Text c="dimmed" size="xs">
                                 {userData.email}
                             </Text>
                         </div>
@@ -63,37 +63,37 @@ const UserButton = () => {
             </Menu.Target>
             <Menu.Dropdown>
                 <Menu.Item
-                    icon={<IconHeart size="0.9rem" color={theme.colors.red[6]} stroke={1.5}/>}
+                    leftSection={<IconHeart size="0.9rem" color={theme.colors.red[6]} stroke={1.5}/>}
                 >
                     Publicações que gostei
                 </Menu.Item>
                 <Menu.Item
-                    icon={<IconStar size="0.9rem" color={theme.colors.yellow[6]} stroke={1.5}/>}
+                    leftSection={<IconStar size="0.9rem" color={theme.colors.yellow[6]} stroke={1.5}/>}
                 >
                     Publicações guardadas
                 </Menu.Item>
                 <Menu.Item
-                    icon={<IconMessage size="0.9rem" color={theme.colors.blue[6]} stroke={1.5}/>}
+                    leftSection={<IconMessage size="0.9rem" color={theme.colors.blue[6]} stroke={1.5}/>}
                 >
                     Os meus comentários
                 </Menu.Item>
 
                 <Menu.Label>Definições</Menu.Label>
-                <Menu.Item icon={<IconSettings size="0.9rem" stroke={1.5}/>}>
+                <Menu.Item leftSection={<IconSettings size="0.9rem" stroke={1.5}/>}>
                     Configurações da conta
                 </Menu.Item>
-                <Menu.Item icon={<IconSwitchHorizontal size="0.9rem" stroke={1.5}/>}>
+                <Menu.Item leftSection={<IconSwitchHorizontal size="0.9rem" stroke={1.5}/>}>
                     Mudar de conta
                 </Menu.Item>
-                <Menu.Item icon={<IconLogout size="0.9rem" stroke={1.5}/>}>Terminar sessão</Menu.Item>
+                <Menu.Item leftSection={<IconLogout size="0.9rem" stroke={1.5}/>}>Terminar sessão</Menu.Item>
 
                 <Menu.Divider/>
 
                 <Menu.Label>Zona de perigo</Menu.Label>
-                <Menu.Item icon={<IconPlayerPause size="0.9rem" stroke={1.5}/>}>
+                <Menu.Item leftSection={<IconPlayerPause size="0.9rem" stroke={1.5}/>}>
                     Pausar subscrição
                 </Menu.Item>
-                <Menu.Item color="red" icon={<IconTrash size="0.9rem" stroke={1.5}/>}>
+                <Menu.Item color="red" leftSection={<IconTrash size="0.9rem" stroke={1.5}/>}>
                     Eliminar conta
                 </Menu.Item>
             </Menu.Dropdown>

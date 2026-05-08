@@ -22,12 +22,12 @@ const SignupPage = () => {
             </Helmet>
             <Container size={420} my={40}>
                 <Title
-                    align="center"
-                    sx={() => ({fontWeight: 900})}
+                    ta="center"
+                    fw={900}
                 >
                     Bem-vindo!
                 </Title>
-                <Text color="dimmed" size="sm" align="center" mt={5}>
+                <Text c="dimmed" size="sm" ta="center" mt={5}>
                     Já tem uma conta?{' '}
                     <Anchor size="sm" component="button">
                         Iniciar Sessão
@@ -36,14 +36,14 @@ const SignupPage = () => {
 
                 <Paper withBorder shadow="md" p={30} mt={30} radius="md">
                     <Group grow mb="md" mt="md">
-                        <Button radius="xl" leftIcon={<IconBrandFacebook size={18}/>}>Facebook</Button>
-                        <Button radius="xl" leftIcon={<IconBrandGoogle size={18}/>}>Google</Button>
+                        <Button radius="xl" leftSection={<IconBrandFacebook size={18}/>}>Facebook</Button>
+                        <Button radius="xl" leftSection={<IconBrandGoogle size={18}/>}>Google</Button>
                     </Group>
                     <Divider label="Ou continue com email" labelPosition="center" my="lg" />
                     <TextInput label="Nome" placeholder="O seu nome" required/>
                     <TextInput label="Email" placeholder="exemplo@email.com" required mt="md"/>
                     <PasswordInput label="Palavra-passe" placeholder="A sua palavra-passe" required mt="md"/>
-                    <Group position="apart" mt="lg">
+                    <Group justify="space-between" mt="lg">
                         <Checkbox label="Lembrar-me"/>
                         <Anchor component="button" size="sm">
                             Esqueceu-se da palavra-passe?

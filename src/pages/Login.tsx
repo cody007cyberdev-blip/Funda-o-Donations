@@ -23,7 +23,7 @@ import ShareImg from "../assets/img/share-campaign.png";   // pode trocar por fo
 import TestimonialsSection from "../sections/Home/Testimonials";
 import { Link } from "react-router-dom";
 
-const HowItWorksPage = (): JSX.Element => {
+const HowItWorksPage = (): React.ReactElement => {
     const boxProps: BoxProps = {
         mt: 96,
         mb: 136,
@@ -69,7 +69,7 @@ const HowItWorksPage = (): JSX.Element => {
             <Box>
                 <Container>
                     {/* Hero + Vídeo */}
-                    <Box {...boxProps} sx={{ textAlign: 'center' }}>
+                    <Box {...boxProps} style={{ textAlign: 'center' }}>
                         <Title mb={48} fw={800}>Como pode ajudar a Fundação Infância Feliz</Title>
                         <Text>
                             Há mais de 20 anos trabalhamos para garantir os direitos e o bem-estar das crianças e jovens de Cabo Verde.
@@ -88,10 +88,10 @@ const HowItWorksPage = (): JSX.Element => {
 
                     {/* 3 Passos */}
                     <Box {...boxProps}>
-                        <Title {...titleProps} align="center">É muito simples ajudar</Title>
+                        <Title {...titleProps} ta="center">É muito simples ajudar</Title>
                         <SimpleGrid
                             cols={3}
-                            spacing="lg"
+                            gap="lg"
                             breakpoints={[
                                 { maxWidth: 'md', cols: 3, spacing: 'md' },
                                 { maxWidth: 'sm', cols: 1, spacing: 0 },
@@ -165,7 +165,7 @@ const HowItWorksPage = (): JSX.Element => {
                                         alt="Crianças felizes na escola da FIF"
                                     />
                                 </Card.Section>
-                                <Stack spacing="sm" align="start" mt="md" px="md" pb="md">
+                                <Stack gap="sm" align="start" mt="md" px="md" pb="md">
                                     <Text size="lg" fw={500}>Conheça os nossos projetos e beneficiários</Text>
                                     <Button size="md" component={Link} to="/projetos">
                                         Ver Projetos
@@ -186,7 +186,7 @@ const HowItWorksPage = (): JSX.Element => {
                                         alt="Fazer donativo"
                                     />
                                 </Card.Section>
-                                <Stack spacing="sm" align="start" mt="md" px="md" pb="md">
+                                <Stack gap="sm" align="start" mt="md" px="md" pb="md">
                                     <Text size="lg" fw={500}>Faça já o seu donativo ou apadrinhamento</Text>
                                     <Button size="md" color="yellow" component={Link} to="/doar">
                                         Quero Ajudar Agora

@@ -39,22 +39,18 @@ function Stats({ amount, description }: IStatsProps) {
             p="xl"
             shadow="lg"
             radius="md"
-            sx={{
+            style={{
                 backdropFilter: `blur(16px) saturate(180%)`,
                 backgroundColor: `rgba(255, 255, 255, 0.85)`,
                 border: `2px solid rgba(0, 48, 135, 0.1)`,
                 textAlign: "center",
                 transition: "all 0.3s ease",
-                "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: "0 20px 40px rgba(0, 48, 135, 0.15)"
-                }
             }}
         >
-            <Title order={1} size={48} weight={900} color="primary" mb="sm">
+            <Title order={1} size={48} fw={900} c="primary" mb="sm">
                 {amount}
             </Title>
-            <Text size="md" color="dimmed" weight={500}>
+            <Text size="md" c="dimmed" fw={500}>
                 {description}
             </Text>
         </Paper>
@@ -76,23 +72,18 @@ const StatsSection = ({ boxProps, subtitleProps, titleProps }: IProps) => {
         <Box {...boxProps}>
             <Box mb="xl" ta="center">
                 <TitleBadge title="o nosso impacto" />
-                <Title {...titleProps} align="center">
+                <Title {...titleProps} ta="center">
                     Números que contam histórias de esperança
                 </Title>
-                <Text {...subtitleProps} align="center" maw={680} mx="auto">
+                <Text {...subtitleProps} ta="center" maw={680} mx="auto">
                     Desde 2002, a Fundação Infância Feliz transforma vidas todos os dias. 
                     Cada número representa uma criança com mais oportunidades, uma família mais digna e um futuro mais feliz.
                 </Text>
             </Box>
 
             <SimpleGrid
-                cols={3}
-                spacing="xl"
-                breakpoints={[
-                    { maxWidth: "lg", cols: 3, spacing: "lg" },
-                    { maxWidth: "md", cols: 2, spacing: "lg" },
-                    { maxWidth: "sm", cols: 1, spacing: "lg" },
-                ]}
+                cols={{ base: 1, sm: 2, lg: 3 }}
+                gap="xl"
             >
                 {items}
             </SimpleGrid>

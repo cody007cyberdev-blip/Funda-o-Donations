@@ -166,7 +166,7 @@ const AppNavbar = ({...others}: IProps) => {
             >
                 <Container
                     fluid
-                    sx={{
+                    style={{
                         display: 'flex',
                         alignItems: 'center',
                         height: '100%',
@@ -179,7 +179,7 @@ const AppNavbar = ({...others}: IProps) => {
                         color="white"
                     />
 
-                    <Group position="apart" sx={{width: '100%'}}>
+                    <Group justify="space-between" style={{width: '100%'}}>
                         <Group>
                             <BrandName
                                 size={24}
@@ -208,7 +208,7 @@ const AppNavbar = ({...others}: IProps) => {
                                     <UnstyledButton
                                         className={cx(classes.user, {[classes.userActive]: userMenuOpened})}
                                     >
-                                        <Group spacing={7}>
+                                        <Group gap={7}>
                                             <Avatar
                                                 src={user.image}
                                                 alt={user.name}
@@ -217,7 +217,7 @@ const AppNavbar = ({...others}: IProps) => {
                                             />
                                             {!matchesMobile &&
                                                 <>
-                                                    <Text weight={500} size="sm" sx={{lineHeight: 1}} mr={3}>
+                                                    <Text fw={500} size="sm" style={{lineHeight: 1}} mr={3}>
                                                         {user.name}
                                                     </Text>
                                                     <IconChevronDown size={rem(12)} stroke={1.5}/>
@@ -275,7 +275,7 @@ const AppNavbar = ({...others}: IProps) => {
                 classNames={{header: classes.drawerHeader, close: classes.close}}
                 zIndex={1000000}
             >
-                <ScrollArea h={`calc(100vh - ${rem(0)})`} mx="-md" sx={{backgroundColor: theme.colors.primary[6]}}>
+                <ScrollArea h={`calc(100vh - ${rem(0)})`} mx="-md" style={{backgroundColor: theme.colors.primary[6]}}>
                     <AppLinks direction='column'/>
                 </ScrollArea>
             </Drawer>

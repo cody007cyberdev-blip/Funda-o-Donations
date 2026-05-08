@@ -36,7 +36,7 @@ const ShareModal = ({campaign, iconSize, ...others}: IProps) => {
 
     const buttonProps: ButtonProps = {
         variant: "light",
-        color: 'secondary'
+        color: 'gray'
     }
 
     return (
@@ -47,14 +47,14 @@ const ShareModal = ({campaign, iconSize, ...others}: IProps) => {
                     <Paper>
                         <Flex wrap="wrap" gap="xs">
                             <Button
-                                leftIcon={<IconBrandFacebook size={iconSize}/>} {...buttonProps}>Facebook</Button>
-                            <Button leftIcon={<IconBrandTwitter size={iconSize}/>} {...buttonProps}>Twitter</Button>
+                                leftSection={<IconBrandFacebook size={iconSize}/>} {...buttonProps}>Facebook</Button>
+                            <Button leftSection={<IconBrandTwitter size={iconSize}/>} {...buttonProps}>Twitter</Button>
                             <Button
-                                leftIcon={<IconBrandInstagram size={iconSize}/>} {...buttonProps}>Instagram</Button>
+                                leftSection={<IconBrandInstagram size={iconSize}/>} {...buttonProps}>Instagram</Button>
                             <Button
-                                leftIcon={<IconBrandLinkedin size={iconSize}/>} {...buttonProps}>LinkedIn</Button>
-                            <Button leftIcon={<IconMail size={iconSize}/>} {...buttonProps}>E-mail</Button>
-                            <Button leftIcon={<IconCode size={iconSize}/>} {...buttonProps}>Incorporar</Button>
+                                leftSection={<IconBrandLinkedin size={iconSize}/>} {...buttonProps}>LinkedIn</Button>
+                            <Button leftSection={<IconMail size={iconSize}/>} {...buttonProps}>E-mail</Button>
+                            <Button leftSection={<IconCode size={iconSize}/>} {...buttonProps}>Incorporar</Button>
                         </Flex>
                     </Paper>
                     <Paper>
@@ -63,13 +63,13 @@ const ShareModal = ({campaign, iconSize, ...others}: IProps) => {
                                 label="Copiar Link"
                                 value={`https://fif.cv/${campaign?.id}`}
                                 disabled
-                                sx={{flex: '1 1 auto'}}/>
+                                style={{flex: '1 1 auto'}}/>
                             <CopyButton value={`https://fif.cv/${campaign?.id}`} timeout={2000}>
                                 {({copied, copy}) => (
                                     <Tooltip label={copied ? 'Copiado' : 'Copiar'} withArrow position="right">
                                         <Button
                                             color={copied ? 'green' : 'gray'}
-                                            leftIcon={copied ? <IconCheck size="1rem"/> : <IconCopy size="1rem"/>}
+                                            leftSection={copied ? <IconCheck size="1rem"/> : <IconCopy size="1rem"/>}
                                             onClick={copy}>
                                             {copied ? 'Copiado' : 'Copiar'}
                                         </Button>
@@ -86,14 +86,14 @@ const ShareModal = ({campaign, iconSize, ...others}: IProps) => {
                     <Paper>
                         <Flex wrap="wrap" gap="xs">
                             <Button
-                                leftIcon={<IconBrandFacebook size={iconSize}/>} {...buttonProps}>Facebook</Button>
-                            <Button leftIcon={<IconBrandTwitter size={iconSize}/>} {...buttonProps}>Twitter</Button>
+                                leftSection={<IconBrandFacebook size={iconSize}/>} {...buttonProps}>Facebook</Button>
+                            <Button leftSection={<IconBrandTwitter size={iconSize}/>} {...buttonProps}>Twitter</Button>
                             <Button
-                                leftIcon={<IconBrandInstagram size={iconSize}/>} {...buttonProps}>Instagram</Button>
+                                leftSection={<IconBrandInstagram size={iconSize}/>} {...buttonProps}>Instagram</Button>
                             <Button
-                                leftIcon={<IconBrandLinkedin size={iconSize}/>} {...buttonProps}>LinkedIn</Button>
-                            <Button leftIcon={<IconMail size={iconSize}/>} {...buttonProps}>E-mail</Button>
-                            <Button leftIcon={<IconCode size={iconSize}/>} {...buttonProps}>Incorporar</Button>
+                                leftSection={<IconBrandLinkedin size={iconSize}/>} {...buttonProps}>LinkedIn</Button>
+                            <Button leftSection={<IconMail size={iconSize}/>} {...buttonProps}>E-mail</Button>
+                            <Button leftSection={<IconCode size={iconSize}/>} {...buttonProps}>Incorporar</Button>
                         </Flex>
                     </Paper>
                     <Paper>
@@ -102,13 +102,13 @@ const ShareModal = ({campaign, iconSize, ...others}: IProps) => {
                                 label="Copiar Link"
                                 value={`https://fif.cv/${campaign?.id}`}
                                 disabled
-                                sx={{flex: '1 1 auto'}}/>
+                                style={{flex: '1 1 auto'}}/>
                             <CopyButton value={`https://fif.cv/${campaign?.id}`} timeout={2000}>
                                 {({copied, copy}) => (
                                     <Tooltip label={copied ? 'Copiado' : 'Copiar'} withArrow position="right">
                                         <Button
                                             color={copied ? 'green' : 'gray'}
-                                            leftIcon={copied ? <IconCheck size="1rem"/> : <IconCopy size="1rem"/>}
+                                            leftSection={copied ? <IconCheck size="1rem"/> : <IconCopy size="1rem"/>}
                                             onClick={copy}>
                                             {copied ? 'Copiado' : 'Copiar'}
                                         </Button>

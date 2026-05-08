@@ -160,7 +160,7 @@ export function LandingFooter({ data }: FooterLinksProps) {
             © 2024 Fundação Infância Feliz. Todos os direitos reservados.
           </Text>
 
-          <Group spacing={0} className={classes.social} position="right" noWrap>
+          <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
             <ActionIcon size="lg" color="gray" variant="subtle">
               <IconBrandFacebook size={18} stroke={1.5} />
             </ActionIcon>

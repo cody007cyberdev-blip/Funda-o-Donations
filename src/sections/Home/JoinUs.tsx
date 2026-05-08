@@ -33,9 +33,9 @@ const JoinUsSection = ({ boxProps, subtitleProps }: IProps) => {
                 align={{ base: 'center', md: 'flex-start' }}
             >
                 {/* Texto + Call to Action */}
-                <Stack spacing="lg" maw={520}>
+                <Stack gap="lg" maw={520}>
                     <TitleBadge title="Junte-se a nós" />
-                    <Text {...subtitleProps} size="xl" weight={700} color="primary">
+                    <Text {...subtitleProps} size="xl" fw={700} c="primary">
                         Faça parte de uma família que transforma vidas todos os dias
                     </Text>
 
@@ -43,9 +43,9 @@ const JoinUsSection = ({ boxProps, subtitleProps }: IProps) => {
                         <ThemeIcon size={48} radius="xl" color="secondary" variant="filled">
                             <IconWorld size={26} />
                         </ThemeIcon>
-                        <Stack spacing={4}>
-                            <Text weight={600}>Comunidade global</Text>
-                            <Text size="sm" color="dimmed">
+                        <Stack gap={4}>
+                            <Text fw={600}>Comunidade global</Text>
+                            <Text size="sm" c="dimmed">
                                 Padrinhos e doadores de Portugal, Suíça, Alemanha, EUA e de todo o mundo apoiam as nossas crianças.
                             </Text>
                         </Stack>
@@ -55,15 +55,15 @@ const JoinUsSection = ({ boxProps, subtitleProps }: IProps) => {
                         <ThemeIcon size={48} radius="xl" color="secondary" variant="filled">
                             <IconHeartHandshake size={26} />
                         </ThemeIcon>
-                        <Stack spacing={4}>
-                            <Text weight={600}>Impacto real</Text>
-                            <Text size="sm" color="dimmed">
+                        <Stack gap={4}>
+                            <Text fw={600}>Impacto real</Text>
+                            <Text size="sm" c="dimmed">
                                 Cada contributo chega diretamente às crianças: material escolar, alimentação, saúde e educação.
                             </Text>
                         </Stack>
                     </Flex>
 
-                    <Avatar.Group spacing="sm">
+                    <Avatar.Group gap="sm">
                         <Avatar radius="xl" />
                         <Avatar radius="xl" />
                         <Avatar radius="xl" />
@@ -73,7 +73,7 @@ const JoinUsSection = ({ boxProps, subtitleProps }: IProps) => {
                         </Avatar>
                     </Avatar.Group>
 
-                    <Text size="sm" color="dimmed" mb="xs">
+                    <Text size="sm" c="dimmed" mb="xs">
                         Mais de 850 pessoas já fazem parte da nossa família de apoio
                     </Text>
 

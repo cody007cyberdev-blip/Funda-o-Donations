@@ -161,20 +161,20 @@ export function LandingNavbar() {
 
     return (
         <>
-            <Header height={compressedNav ? 60 : 70} className={classes.header} sx={{ position: 'sticky', top: 0, zIndex: 100 }}>
+            <Header height={compressedNav ? 60 : 70} className={classes.header} style={{ position: 'sticky', top: 0, zIndex: 100 }}>
                 <Container size="lg" h="100%" px="md">
-                    <Group position="apart" sx={{ height: '100%' }} noWrap spacing={0}>
+                    <Group justify="space-between" style={{ height: '100%' }} wrap="nowrap" gap={0}>
                         <BrandName />
 
-                        <Group spacing={0} className={classes.hiddenMobile} mr={-12}>
+                        <Group gap={0} className={classes.hiddenMobile} mr={-12}>
                             {links}
                         </Group>
 
-                        <Group spacing="xs" className={classes.hiddenMobile}>
+                        <Group gap="xs" className={classes.hiddenMobile}>
                             <Button
                                 variant="subtle"
                                 size="sm"
-                                leftIcon={<IconSearch size={16} />}
+                                leftSection={<IconSearch size={16} />}
                                 onClick={toggleSearch}
                             >
                                 Pesquisar
@@ -184,7 +184,7 @@ export function LandingNavbar() {
                                 to="/dashboard"
                                 variant="filled"
                                 size="sm"
-                                sx={{ backgroundColor: '#000000' }}
+                                style={{ backgroundColor: '#000000' }}
                             >
                                 Painel
                             </Button>
@@ -204,18 +204,18 @@ export function LandingNavbar() {
                 className={classes.drawer}
                 zIndex={1000000}
             >
-                <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
+                <ScrollArea style={{ height: 'calc(100vh - 60px)' }} mx="-md">
                     <Divider my="sm" />
 
                     {links}
 
                     <Divider my="sm" />
 
-                    <Group position="center" grow pb="xl" px="md">
+                    <Group justify="center" grow pb="xl" px="md">
                         <Button
                             variant="subtle"
                             size="sm"
-                            leftIcon={<IconSearch size={16} />}
+                            leftSection={<IconSearch size={16} />}
                             onClick={() => {
                                 toggleSearch();
                                 closeDrawer();
@@ -228,7 +228,7 @@ export function LandingNavbar() {
                             to="/dashboard"
                             variant="filled"
                             size="sm"
-                            sx={{ backgroundColor: '#000000' }}
+                            style={{ backgroundColor: '#000000' }}
                         >
                             Painel
                         </Button>

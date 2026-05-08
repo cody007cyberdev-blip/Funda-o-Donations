@@ -71,9 +71,9 @@ function Feature({ image, title, description, action }: FeatureProps) {
             <Card.Section>
                 <Image src={image} height={240} fit="cover" alt={title} />
             </Card.Section>
-            <Stack spacing="sm" mt="md" pb="xs">
-                <Title order={4} color="primary">{title}</Title>
-                <Text size="sm" color="dimmed">{description}</Text>
+            <Stack gap="sm" mt="md" pb="xs">
+                <Title order={4} c="primary">{title}</Title>
+                <Text size="sm" c="dimmed">{description}</Text>
                 <Button variant="subtle" color="secondary" mt="auto">
                     {action}
                 </Button>
@@ -101,12 +101,8 @@ const FeaturesSection = ({ boxProps, subtitleProps }: IProps) => {
                 </Text>
             </Box>
             <SimpleGrid 
-                cols={2} 
-                spacing="lg" 
-                breakpoints={[
-                    { maxWidth: 'md', cols: 2, spacing: 'sm' },
-                    { maxWidth: 'sm', cols: 1 }
-                ]}
+                cols={{ base: 1, sm: 2 }} 
+                gap="lg" 
             >
                 {items}
             </SimpleGrid>
